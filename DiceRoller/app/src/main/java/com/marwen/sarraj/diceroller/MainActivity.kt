@@ -11,11 +11,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val rollButton: Button=findViewById(R.id.roll_button)
-        val resultText: TextView= findViewById(R.id.result_text)
-        resultText.text="Dice Rolled!"
         rollButton.setOnClickListener { rollDice() }
     }
     private fun rollDice(){
+        val randomInt = (1..6).random()
+        val resultText: TextView= findViewById(R.id.result_text)
+        resultText.text= randomInt.toString()
         Toast.makeText(this, "button clicked",
             Toast.LENGTH_SHORT).show()
     }
